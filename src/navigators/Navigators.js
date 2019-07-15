@@ -34,12 +34,60 @@ const DashboardTabNavigator = createBottomTabNavigator(
   {
     Dashboard:{
      screen: DashboardScreen,
+     navigationOptions: {
+      tabBarLabel: 'EXPLORE',
+      tabBarIcon: ({ tintColor }) => (
+        <Icon type="AntDesign" name="wallet" style={{fontSize: 20, color: tintColor }} />
+      )
+    }
     },
-    Services,
-    Transection,
-    Feed
+    Services:{
+      screen: Services,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => (
+          <Icon type="FontAwesome5" name="dollar-sign" style={{fontSize: 20, color: tintColor }} />
+        )
+      }
+    },
+    Transection:{
+      screen: Transection,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => (
+          <Icon type="MaterialCommunityIcons" name="bank-transfer" style={{fontSize: 20, color: tintColor }} />
+        )
+      }
+    },
+    Feed:{
+      screen: Feed,
+      navigationOptions: {
+        tabBarLabel: 'News Feed',
+        tabBarIcon: ({ tintColor }) => (
+          <Icon type="Entypo" name="news" style={{fontSize: 20, color: tintColor }} />
+        )
+      }
+    }
   },
   {
+    tabBarOptions: {
+      // // //' - Label and icon color of the active tab.'
+      activeTintColor: 'white',
+      // // //' - Background color of the active tab.'
+      activeBackgroundColor: '#3F52B5',
+      // // //' - Label and icon color of the inactive tab.'
+      inactiveTintColor: 'white',
+      // // //' - Background color of the inactive tab.'
+      inactiveBackgroundColor: '#3672b1',
+      // // //' - Style object for the tab bar.'
+      // style: { borderWidth: 2, borderColor: 'purple' },
+      // // //' - Style object for the tab label.'
+      // labelStyle: { fontWeight: 'bold' },
+      // // //' - Style object for the tab.'
+      // tabStyle: { padding: 16 },
+      // // //' - Whether to show label for tab, default is true.'
+      // showLabel: false,
+      // // //' - Whether to show icon for tab, default is true.'
+      // showIcon: false,
+    },
     navigationOptions: ({ navigation }) => {
       const { routeName } = navigation.state.routes[navigation.state.index];
       return {
@@ -55,6 +103,7 @@ const DashboardTabNavigator = createBottomTabNavigator(
       };
     }
   }
+  
 );
 
 
