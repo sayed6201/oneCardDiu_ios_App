@@ -15,6 +15,8 @@ import {
   DrawerItems,
 } from 'react-navigation';
 
+import { Constants } from 'expo';
+
 import { WelcomeScreen }  from '../components/Screens';
 import { Profile } from '../components/Profile';
 import { About } from '../components/About';
@@ -22,7 +24,8 @@ import { Services } from '../components/Services';
 import { DashboardScreen } from '../components/DashboardScreen';
 import { Transection } from '../components/Transection';
 import { Feed } from '../components/Feed';
-import { Constants } from 'expo';
+import { Noticeboard }from '../components/Noticeboard';
+
 
 
 /*
@@ -35,7 +38,7 @@ const DashboardTabNavigator = createBottomTabNavigator(
     Dashboard:{
      screen: DashboardScreen,
      navigationOptions: {
-      tabBarLabel: 'EXPLORE',
+      tabBarLabel: 'Dashboard',
       tabBarIcon: ({ tintColor }) => (
         <Icon type="AntDesign" name="wallet" style={{fontSize: 20, color: tintColor }} />
       )
@@ -187,6 +190,32 @@ const profileStackNavigator = createStackNavigator(
 
 /*
 =============================================================
+Stack navigation for Noticeboard 
+=============================================================
+*/
+const noticeStackNavigator = createStackNavigator(
+  {
+    Noticeboard: Noticeboard,
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => {
+      return {
+        headerLeft: (
+          <Icon
+            style={{ paddingLeft: 10, color:'white' }}
+            onPress={() => navigation.openDrawer()}
+            name="md-menu"
+            size={30}
+
+          />
+        )
+      };
+    }
+  }
+);
+
+/*
+=============================================================
 Custom drawer
 =============================================================
 */
@@ -216,6 +245,9 @@ const AppDrawerNavigator = createDrawerNavigator({
     },
     Profile:{
       screen: profileStackNavigator
+    },
+    Noticeboard:{
+      screen: noticeStackNavigator
     },
     About:{
       screen: AboutStackNavigator

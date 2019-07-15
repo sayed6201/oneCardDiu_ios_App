@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 import { Card } from 'react-native-elements';
 
 
