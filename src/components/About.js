@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
-import { Card } from 'react-native-elements';
+import { View, Text, StyleSheet, Image } from 'react-native';
+import { Card } from 'native-base';
 
 
 
@@ -23,17 +23,16 @@ export class About extends Component {
     
     render() {
         return (
-          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Card title="About The App">
-                {/*react-native-elements Card*/}
-                <Text style={styles.paragraph}>
-                    About Diu one Card App
-                </Text>
-                <Button
-                  title="profile"
-                  style={ {margin: '100'} }
-                  onPress={console.log('hi')}
-                />
+          <View style={{ flex: 1, alignItems: 'center' }}>
+            <Card>
+                <View style={{width: 400, height:400 }} >
+                    <Image style= {{flex:1 , width: "100%", height: undefined}}    
+                    source={require("../../assets/logo.png")}
+                    resizeMode="contain"
+                    />
+                    <Text style={{ alignSelf:"center" }} >Single Point of Access</Text>
+                    <Text style={{ alignSelf:"center" }} >Powered By Daffodil Computers</Text>
+                </View>
             </Card>
           </View>
         );

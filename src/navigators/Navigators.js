@@ -221,10 +221,10 @@ Custom drawer
 */
 const CustomDrawerContentComponent = props => (
   <Container>
-    <Header style={[{ backgroundColor: '#3a455c', height: 90 }, styles.androidHeader]}>
-      <Left style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
-        <Icon name="person" style={{ color: 'white' }} />
-        <Text style={{ marginLeft: 5, fontSize: 18, color: 'white', fontStyle: 'italic' }}>Hello, Sayed</Text>
+    <Header style={[{ backgroundColor: '#3672b1', height: 150 }, styles.androidHeader]}>
+      <Left style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+        <Icon name="person" style={{ color: 'white', fontSize:50 }} />
+        <Text style={{ marginLeft: 5, fontSize: 15, color: 'white', fontStyle: 'italic' }}>Hello, Sayed</Text>
       </Left>
     </Header>
     <Content>
