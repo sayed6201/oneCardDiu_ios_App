@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { View, StyleSheet, Button } from 'react-native';
+import { View, StyleSheet, Button, AsyncStorage } from 'react-native';
 import {
   Container,
   Header, 
@@ -13,6 +13,15 @@ import {
  } from 'native-base';
 
 export class DashboardScreen extends Component {
+
+  state = { email:null };
+
+  componentWillMount(){
+      AsyncStorage.getItem('email').then(value =>{
+        this.setState({ email: value });
+        // alert(value);
+      });
+  }
     render() {
       return (
         <Container>
@@ -21,7 +30,7 @@ export class DashboardScreen extends Component {
             <View style={{ flexDirection:'row', borderBottomWidth:0.5, borderBottomColor:"white", paddingBottom:5  }} >
               <Icon name="person" style={{ fontSize:50, color:"white", marginLeft:20 }}  />
               <View style={{ flexDirection:'column', marginLeft:20,   }} >
-                <Text style={{ color:"white", fontSize:20 }} >Sayed Ahmed</Text>
+                <Text style={{ color:"white", fontSize:18 }} >{this.state.email}</Text>
                 <Text style={{ color:"white", fontSize:15 }} >161-15-7041</Text>
                 <View style={{flexDirection:"row"}} >
                   <Text style={{ color:"white", fontSize:15, marginRight:5 }} >Card status</Text>

@@ -25,6 +25,7 @@ import { DashboardScreen } from '../components/DashboardScreen';
 import { Transection } from '../components/Transection';
 import { Feed } from '../components/Feed';
 import { Noticeboard }from '../components/Noticeboard';
+import LoginScreen from '../components/LoginScreen';
 
 
 
@@ -270,7 +271,7 @@ Switch navigation
 =============================================================
 */
 const AppSwitchNavigator = createSwitchNavigator({
-  Welcome: { screen: WelcomeScreen },
+  Welcome: { screen: LoginScreen },
   Dashboard: { screen: AppDrawerNavigator }
 });
 
